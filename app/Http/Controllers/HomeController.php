@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HasilSimulasi;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('dashboard.operatorDashboard');
+        $users = User::get();
+        $hasils = HasilSimulasi::get();
+        $userCompleted = HasilSimulasi::where('completed','1')->get();
+        return view('dashboard.operatorDashboard',compact('hasils','users','userCompleted'));
     }
 }
