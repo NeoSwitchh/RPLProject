@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>	
+	<script type="text/javascript" src="{{asset('assets/js/echarts.min.js')}}"></script>	
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -42,7 +44,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{url('/home')}}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/news')}}">News</a>
@@ -51,11 +53,11 @@
                     
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                          </form>
+                            <button class="btn btn-success" type="submit" style="background-color: #43FA76; border: none; color: black;">Search</button>
+                        </form>
+                        <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">

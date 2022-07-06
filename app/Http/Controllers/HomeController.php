@@ -28,6 +28,7 @@ class HomeController extends Controller
         $users = User::get();
         $hasils = HasilSimulasi::get();
         $userCompleted = HasilSimulasi::where('completed','1')->get();
+
         return view('dashboard.operatorDashboard',compact('hasils','users','userCompleted'));
     }
 }
